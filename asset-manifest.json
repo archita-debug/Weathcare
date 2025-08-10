@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/weathcare/static/css/main.acc697b3.css",
+    "main.js": "/weathcare/static/js/main.8f6bd171.js",
+    "index.html": "/weathcare/index.html",
+    "main.acc697b3.css.map": "/weathcare/static/css/main.acc697b3.css.map",
+    "main.8f6bd171.js.map": "/weathcare/static/js/main.8f6bd171.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.acc697b3.css",
+    "static/js/main.8f6bd171.js"
+  ]
+}
