@@ -1,38 +1,66 @@
-.App {
-  text-align: center;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #a1c4fd, #c2e9fb);
+  margin: 0;
+  padding: 0;
+  color: #333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-root { display: flex; flex-direction: column; min-height: 100vh; }
+.header { background: linear-gradient(90deg,#1e90ff,#00bfff); color: white; padding: 18px 0; text-align: center; }
+.title { margin: 0; font-size: 28px; }
+.subtitle { margin: 4px 0 0; font-size: 14px; opacity: 0.95; }
+
+.main-content { padding: 20px; flex: 1; display: flex; justify-content: center; }
+
+/* Container */
+.container {
+  max-width: 900px;
+  width: 100%;
+  margin: 20px;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 14px;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.12);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Controls */
+.controls { display: flex; gap: 10px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.search-box { display: flex; gap: 8px; align-items: center; }
+.search-input { padding: 10px 12px; border: 2px solid #007bff; border-radius: 25px; outline: none; min-width: 220px; }
+.btn { padding: 10px 14px; border: none; background: #007bff; color: white; border-radius: 10px; cursor: pointer; }
+.location-btn { background: #28a745; }
+.error { color: #b00020; margin-top: 10px; }
+
+/* Map */
+.map-box { height: 360px; border-radius: 10px; overflow: hidden; margin-top: 14px; }
+
+/* Forecast */
+.weather-info { margin-top: 18px; }
+.weather-info h2 { font-size: 20px; margin: 0 0 8px 0; }
+
+.day-forecast { margin-top: 18px; }
+.day-title { margin: 0 0 8px 0; font-size: 16px; }
+.horizontal { display: flex; overflow-x: auto; gap: 12px; padding-bottom: 10px; }
+.horizontal::-webkit-scrollbar { height: 8px; }
+.horizontal::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 4px; }
+
+.forecast-card { background: linear-gradient(135deg, #e0f7fa, #b2ebf2); padding: 12px; border-radius: 10px; text-align: center; min-width: 140px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.forecast-card:hover { transform: translateY(-6px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
+
+.weather-icon { width: 64px; height: 64px; display: block; margin: 6px auto; }
+.temp { font-weight: 700; margin: 6px 0 2px 0; }
+.desc { text-transform: capitalize; color: #333; margin-top: 6px; }
+
+.footer { text-align: center; padding: 12px; color: #666; font-size: 13px; margin-top: 18px; }
+
+/* Responsive */
+@media (max-width: 700px) {
+  .container { margin: 12px; padding: 16px; }
+  .map-box { height: 280px; }
+  .search-input { min-width: 140px; }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* Small animation when forecast loads */
+.forecast-card { opacity: 0; transform: translateY(10px); animation: cardIn 0.45s forwards ease; }
+@keyframes cardIn { to { opacity: 1; transform: translateY(0); } }
